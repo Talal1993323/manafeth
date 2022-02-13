@@ -1,6 +1,7 @@
-#import matplotlib
-#matplotlib.use('Agg')
-#import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import tkinter
 from asyncore import write
 from operator import index
 from turtle import right
@@ -9,6 +10,17 @@ import streamlit as st
 import plotly.express as px
 from PIL import Image
 
+class App(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.pack()
+
+class ST:
+    def __init__(self, char):
+        self.ST = char
+        self.F = Frame(char)
+        self.F.place(x = 0, y = 0, width=460, height=401)
+       
 st.set_page_config(page_title='أداء مبيعات منافذ',
                    page_icon=":Bar_Chart:",
                    layout="wide")
